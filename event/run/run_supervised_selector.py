@@ -18,7 +18,7 @@ from time import time
 from more_itertools import zip_equal
 from event.model.t5_prompt import T5StackPrompt, T5ForConditionalGenerationPromptS1
 
-def main(epoch_num = 5, seed = 45, lr=0.005, eval_times = 1, batch_size = 16, model_name = "t5-small", prompt_length_enc = 4, prompt_length_dec = 4 , dataset_prefix = "entailment-bank-task-1-sel", max_step = 50, train_extra_prefix = "657"):
+def main(epoch_num = 5, seed = 45, lr=0.005, eval_times = 1, batch_size = 16, model_name = "t5-small", prompt_length_enc = 4, prompt_length_dec = 4 , dataset_prefix = "entailment-bank-task-1-sel", max_step = 50):
     #set random seed
     random.seed(seed)
     torch.manual_seed(seed)
@@ -31,7 +31,7 @@ def main(epoch_num = 5, seed = 45, lr=0.005, eval_times = 1, batch_size = 16, mo
     
     start_time = time()
     #get data
-    with open(os.path.abspath(f'data/modified/trainset-{dataset_prefix}-{train_extra_prefix}.pickle'), 'rb') as handle:
+    with open(os.path.abspath(f'data/modified/trainset-{dataset_prefix}.pickle'), 'rb') as handle:
         train_set = pickle.load(handle)
     with open(os.path.abspath(f'data/modified/devset-{dataset_prefix}.pickle'), 'rb') as handle:
         dev_set = pickle.load(handle)
@@ -171,7 +171,6 @@ if __name__ == "__main__":
     parser.add_argument('--epoch_num',default=500,type=int)
     parser.add_argument('--seed',default=42,type=int)
     parser.add_argument('--dataset_prefix', default="entailment-bank-task-1-sel", type=str)
-    parser.add_argument('--train_extra_prefix', default="657", type=str)
 
     args = parser.parse_args()
     main(**vars(args))

@@ -12,8 +12,6 @@ import random
 import math
 import copy
 
-import sklearn.metrics
-
 import argparse
 import pickle
 from time import time
@@ -664,7 +662,7 @@ if __name__ == "__main__":
     parser.add_argument('--load_path_sel', default="supervised-selector-weight-best-e=500-s=42-l=0.1-e=2-b=16-m=t5-small-p=4-p=4-d=entailment-bank-task-1-sel-m=50-", type=str)
     parser.add_argument('--load_path_ln', default="supervised-selector-ln-weight-best-e=500-s=42-l=0.1-e=2-b=16-m=t5-small-p=4-p=4-d=entailment-bank-task-1-sel-m=50-", type=str)
     parser.add_argument('--load_path_der', default="supervised-deriver-weight-best-e=500-s=42-l=0.1-e=2-b=16-m=t5-small-p=4-p=4-d=entailment-bank-task-1-inf-", type=str)
-    #parser.add_argument('--load_path_der', default="supervised-deriver-weight-best-e=500-s=42-l=0.1-e=2-b=16-m=t5-small-p=4-p=4-d=entailment-bank-task-1-inf-", type=str)
+    parser.add_argument('--load_path_deberta', default="deberta-contrast-weight-best-lr=0.01-epoch_num=1000-prompt_length=32-batch_size=16-alpha=1-dataset_prefix=deberta-contrast-all-657-withgt2", type=str)
     parser.add_argument('--scale_coef',default=0.0,type=float)
     parser.add_argument('--scale_temp',default=1.0,type=float)
     parser.add_argument('--gate',type=float)

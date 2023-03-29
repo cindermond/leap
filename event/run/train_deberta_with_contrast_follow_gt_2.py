@@ -18,7 +18,7 @@ from more_itertools import zip_equal
 from event.model.deberta_prompt import DebertaV2ForSequenceClassificationP
 from transformers.models.deberta_v2.modeling_deberta_v2 import DebertaV2Model
 
-def main(epoch_num = 5, seed = 45, lr=0.005, eval_times = 2, batch_size = 16, prompt_length = 32, dataset_prefix = "deberta-contrast-all", model_name = "microsoft/deberta-v2-xlarge-mnli", load_path_deberta="deberta-pair-weight-best-lr=0.005-epoch_num=1000-prompt_length=32-batch_size=16", alpha=5):
+def main(epoch_num = 5, seed = 45, lr=0.005, eval_times = 2, batch_size = 16, prompt_length = 32, dataset_prefix = "deberta-contrast-all", model_name = "microsoft/deberta-v2-xlarge-mnli", alpha=5):
     #set random seed
     random.seed(seed)
     torch.manual_seed(seed)
@@ -243,6 +243,6 @@ if __name__ == "__main__":
     parser.add_argument('--epoch_num',default=1000,type=int)
     parser.add_argument('--seed',default=42,type=int)
     parser.add_argument('--alpha',default=1,type=int)
-    parser.add_argument('--dataset_prefix', default="deberta-contrast-all-657", type=str)
+    parser.add_argument('--dataset_prefix', default="deberta-contrast-all", type=str)
     args = parser.parse_args()
     main(**vars(args))

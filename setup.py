@@ -5,5 +5,6 @@ setup(
     name='event',
     version='1.0',
     description='LM reasoning',
-    packages=setuptools.find_packages()
+    packages=setuptools.find_packages(),
+    install_requires=['torch==1.13.1','transformers==4.25.1','matplotlib', 'more_itertools']
     )

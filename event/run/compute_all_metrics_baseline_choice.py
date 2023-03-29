@@ -17,8 +17,6 @@ import argparse
 import pickle
 import inspect
 
-import sklearn.metrics
-
 from time import time
 from more_itertools import zip_equal
 from event.model.t5_prompt import T5ForConditionalGenerationPrompt, T5StackPrompt
