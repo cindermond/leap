@@ -14,8 +14,6 @@ import random
 import math
 import copy
 
-import sklearn.metrics
-
 import argparse
 import pickle
 from time import time
