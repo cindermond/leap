@@ -1,0 +1,10 @@
+/data
+/log
+/*.out
+/*.sh
+/*.txt
+__pycache__/
+*.pyc
+/*.tsv
+/*.png
+/*.pdf
