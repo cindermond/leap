@@ -160,7 +160,7 @@ def eval(deriver, eval_set, tokenizer, device, prompt_length_enc, prompt_length_
     
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="chain reasoning")
-    parser.add_argument('--lr', default=0.01, type=float)
+    parser.add_argument('--lr', default=0.1, type=float)
     parser.add_argument('--batch_size', default=16, type=int)
     parser.add_argument('--prompt_length_enc', default=4, type=int)
     parser.add_argument('--prompt_length_dec', default=4, type=int)
