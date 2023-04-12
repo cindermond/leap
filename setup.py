@@ -6,5 +6,5 @@ setup(
     version='1.0',
     description='LM reasoning',
     packages=setuptools.find_packages(),
-    install_requires=['torch==1.13.1','transformers==4.25.1','datasets','matplotlib', 'more_itertools']
+    install_requires=['torch==1.13.1','transformers==4.25.1','datasets','matplotlib', 'more_itertools', 'sentencepiece', 'protobuf']
     )
